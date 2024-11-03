@@ -1,0 +1,112 @@
+[
+    {
+        "id": "1",
+        "product_title": "Dell XPS 13",
+        "product_image": "https://example.com/dell-xps-13.jpg",
+        "category": "computers",
+        "price": 1200,
+        "description": "High-performance laptop with sleek design.",
+        "Specification": ["13.3-inch display", "8GB RAM", "256GB SSD"],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "id": "2",
+        "product_title": "MacBook Pro 16",
+        "product_image": "https://example.com/macbook-pro-16.jpg",
+        "category": "computers",
+        "price": 2500,
+        "description": "Powerful laptop for professionals.",
+        "Specification": ["16-inch display", "16GB RAM", "1TB SSD"],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "3",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://example.com/hp-spectre-x360.jpg",
+        "category": "computers",
+        "price": 1400,
+        "description": "Versatile convertible laptop.",
+        "Specification": ["13.3-inch display", "8GB RAM", "512GB SSD"],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "id": "4",
+        "product_title": "Asus ROG Zephyrus",
+        "product_image": "https://example.com/asus-rog-zephyrus.jpg",
+        "category": "computers",
+        "price": 1800,
+        "description": "Gaming laptop with powerful graphics.",
+        "Specification": ["15.6-inch display", "16GB RAM", "1TB SSD"],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "5",
+        "product_title": "Lenovo ThinkPad X1 Carbon",
+        "product_image": "https://example.com/lenovo-thinkpad-x1-carbon.jpg",
+        "category": "computers",
+        "price": 1500,
+        "description": "Durable business laptop.",
+        "Specification": ["14-inch display", "8GB RAM", "512GB SSD"],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "id": "6",
+        "product_title": "Microsoft Surface Laptop 4",
+        "product_image": "https://example.com/surface-laptop-4.jpg",
+        "category": "computers",
+        "price": 1300,
+        "description": "Stylish and portable laptop.",
+        "Specification": ["13.5-inch display", "8GB RAM", "256GB SSD"],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "id": "7",
+        "product_title": "iPhone 13 Pro",
+        "product_image": "https://example.com/iphone-13-pro.jpg",
+        "category": "phones",
+        "price": 999,
+        "description": "The latest iPhone with advanced features.",
+        "Specification": ["6.1-inch display", "128GB storage", "A15 Bionic chip"],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "8",
+        "product_title": "Samsung Galaxy S21",
+        "product_image": "https://example.com/galaxy-s21.jpg",
+        "category": "phones",
+        "price": 799,
+        "description": "High-end Android smartphone.",
+        "Specification": ["6.2-inch display", "128GB storage", "Exynos 2100"],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "id": "9",
+        "product_title": "Apple Watch Series 7",
+        "product_image": "https://example.com/apple-watch-series-7.jpg",
+        "category": "smart-watches",
+        "price": 399,
+        "description": "Advanced smartwatch with health tracking.",
+        "Specification": ["44mm case", "GPS", "Heart rate monitor"],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "10",
+        "product_title": "Samsung Galaxy Watch 4",
+        "product_image": "https://example.com/galaxy-watch-4.jpg",
+        "category": "smart-watches",
+        "price": 349,
+        "description": "Smartwatch with fitness tracking and Wear OS.",
+        "Specification": ["42mm case", "GPS", "Body Composition Analysis"],
+        "availability": true,
+        "rating": 4.5
+    }
+]
