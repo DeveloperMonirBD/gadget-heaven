@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div className="bg-gray-100 text-gray-800">
-            <footer className="md:footer-center max-w-7xl mx-auto rounded pt-12 px-10 md:px-3">
+        <div className="">
+            <footer className="md:footer-center max-w-7xl mx-auto rounded pt-12 px-10 md:px-3 bg-gray-100 text-gray-900 rounded-t-3xl">
                 <nav className="mb-4">
                     <h2 className="text-2xl font-bold">Gadget Heaven</h2>
                     <p className="text-lg pt-2">Leading the way in cutting-edge technology and innovation.</p>
@@ -29,7 +29,6 @@ const Footer = () => {
                         <Link className="link link-hover">Cookie policy</Link>
                     </nav>
                 </aside>
-                
             </footer>
         </div>
     );

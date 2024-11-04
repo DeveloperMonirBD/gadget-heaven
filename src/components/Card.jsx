@@ -3,9 +3,9 @@
 const Card = ({ product }) => {
     const {product_image, product_title, price } = product || {};
     return (
-        <div className="card bg-base-100 shadow-xl">
-            <figure className="px-4 pt-10 h-[250px]">
-                <img src={product_image} alt="Shoes" className="rounded-xl w-full h-full object-cover" />
+        <div className="card bg-base-100 shadow-2xl border transition hover:scale-105">
+            <figure className="h-[180px] pt-6 px-2">
+                <img src={product_image} alt={product_title} className=" w-full h-full object-cover" />
             </figure>
             <div className="card-body items-start">
                 <h2 className="card-title">{product_title}</h2>

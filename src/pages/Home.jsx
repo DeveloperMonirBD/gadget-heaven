@@ -12,7 +12,7 @@ const Home = () => {
 
             <div>
                 <h2 className="text-center mb-12 text-2xl md:text-3xl lg:text-4xl font-bold">Explore Cutting-Edge Gadgets</h2>
-                <div className="grid grid-cols-12 gap-6 mb-20">
+                <div className="grid grid-cols-12 gap-8 mb-20">
                     {/* Categories tab section  */}
                     <Categories categories={categories} />
 

@@ -20,7 +20,9 @@ const Categories = ({ categories }) => {
                         key={category.category}
                         to={`/category/${category.category}`}
                         className={({ isActive }) =>
-                            `px-6 py-6 bg-gray-200 text-gray-600 rounded-3xl text-lg text-center  font-semibold hover:bg-gray-300 transition ${isActive ? 'bg-purple-600 text-white' : ''}`
+                            `px-6 py-6 bg-gray-200 text-gray-600 rounded-3xl text-lg text-center  font-semibold hover:bg-gray-300 transition ${
+                                isActive ? 'bg-purple-600 text-white' : 'transition hover:scale-105 hover:text-purple-600 '
+                            }`
                         }>
                         {category.category}
                     </NavLink>
