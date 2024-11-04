@@ -1,30 +1,35 @@
-import { Link, NavLink } from 'react-router-dom';
 import { FaRegHeart } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/">
+                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-white' : 'hover:text-white'}`} to="/">
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/statistics">
+                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-white' : 'hover:text-white'}`} to="/products">
+                    Products
+                </NavLink>
+            </li>
+            <li>
+                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-white' : 'hover:text-white'}`} to="/statistics">
                     Statistics
                 </NavLink>
             </li>
             <li>
-                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to="/dashboard">
+                <NavLink className={({ isActive }) => `font-bold ${isActive ? 'text-white' : 'hover:text-white'}`} to="/dashboard">
                     Dashboard
                 </NavLink>
-            </li>     
+            </li>
         </>
     );
 
     return (
-        <div className="sticky top-0 bg-white/30 bg-opacity-50 backdrop-blur-xl shadow-sm z-10">
-            <div className="navbar max-w-7xl mx-auto px-3">
+        <div className="fixed top-0 left-0 right-0 text-white  mt-4 z-10">
+            <div className="navbar max-w-7xl mx-auto px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +37,7 @@ const Navbar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-md dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow text-gray-600 text-base font-semibold gap-2">
+                        <ul tabIndex={0} className="menu menu-md dropdown-content bg-[#9538E2] rounded-box z-[1] mt-3 w-52 p-2 shadow text-gray-100 text-base font-semibold gap-2">
                             {links}
                         </ul>
                     </div>
@@ -42,7 +47,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-gray-600 gap-8 text-base font-semibold">{links}</ul>
+                    <ul className="menu menu-horizontal px-1 text-gray-100 gap-8 text-base font-semibold">{links}</ul>
                 </div>
 
                 <div className="navbar-end">
