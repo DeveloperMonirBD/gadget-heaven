@@ -2,18 +2,32 @@ import { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegHeart } from 'react-icons/fa';
+import { addFavourite, getAllFavourites } from '../utils';
 
 const ProductDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const [product, setProduct] = useState({});
+    const [isFavorite, setisFavorite] = useState(false)
 
     useEffect(() => {
         const singleData = data.find(product => product.id === id);
         setProduct(singleData);
+        
+        const favourites = getAllFavourites();
+        const isExist = favourites.find(item => item.id == singleData.id);
+        if (isExist) {
+            setisFavorite(true);
+        }
     }, [data, id]);
 
     const { product_image, product_title, price, availability, description, specification, rating } = product;
+
+    // Handle favourite btn click
+    const handleFavourite = (product) => {
+        addFavourite(product);
+        setisFavorite(true);
+    }
 
     return (
         <div className="pb-[620px] md:pb-36 lg:pb-20">
@@ -67,7 +81,7 @@ const ProductDetails = () => {
                             {/* card btn  */}
 
                             <div className="flex items-center gap-2 pt-3">
-                                <button className=" btn bg-purple-500 text-white hover:text-purple-600 flex items-center rounded-full">
+                                <button disabled={isFavorite} onClick={() => handleFavourite(product)} className="btn bg-purple-500 text-white hover:text-purple-600 flex items-center rounded-full">
                                     Add To Card{' '}
                                     <span className="text-xl">
                                         <IoCartOutline />
