@@ -11,12 +11,12 @@ const Banner = () => {
                             <p className="py-3 pt-4 pb-5 text-sm md:text-md lg:px-10">
                                 Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
                             </p>
-                            <button className="px-8 py-[6px] bg-white rounded-full text-[#9538E2] text-lg font-bold">Shop Now</button>
+                            <button className="px-8 py-3 bg-white rounded-full text-[#9538E2] text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">Shop Now</button>
                         </div>
                     </div>
                 </div>
 
-                <div className=" w-[330px] md:w-[650px] lg:w-[1000px] absolute top-[355px] md:top-[300px] left-1/2 transform -translate-x-1/2   border border-gray-200 rounded-3xl p-2">
+                <div className=" w-[330px] md:w-[650px] lg:w-[1000px] absolute top-[355px] md:top-[310px] left-1/2 transform -translate-x-1/2   border border-gray-200 rounded-3xl p-2">
                     <img className="w-full max-h-[200px] md:max-h-[300px] lg:max-h-[400px] object-cover rounded-3xl" src={bannerImg} alt="Banner" />
                 </div>
             </div>

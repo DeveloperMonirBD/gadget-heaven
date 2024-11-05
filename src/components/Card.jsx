@@ -16,7 +16,7 @@ const Card = ({ product }) => {
                     <p className="text-xl text-gray-500">${price}</p>
                 </div>
 
-                <Link to={`/product/${id}`} className="btn btn-outline bg-purple-600 text-white">
+                <Link to={`/product/${id}`} className="px-4 py-3 bg-white rounded-xl text-[#9538E2] text-base font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">
                     View Details
                 </Link>
             </div>

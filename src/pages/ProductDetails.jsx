@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
-import { IoCartOutline } from 'react-icons/io5';
 import { FaRegHeart } from 'react-icons/fa';
+import { IoCartOutline } from 'react-icons/io5';
+import { useLoaderData, useParams } from 'react-router-dom';
 import { addFavourite, getAllFavourites } from '../utils';
 
 const ProductDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const [product, setProduct] = useState({});
-    const [isFavorite, setisFavorite] = useState(false)
+    const [isFavorite, setisFavorite] = useState(false);
 
     useEffect(() => {
         const singleData = data.find(product => product.id === id);
         setProduct(singleData);
-        
+
         const favourites = getAllFavourites();
         const isExist = favourites.find(item => item.id == singleData.id);
         if (isExist) {
@@ -24,10 +24,10 @@ const ProductDetails = () => {
     const { product_image, product_title, price, availability, description, specification, rating } = product;
 
     // Handle favourite btn click
-    const handleFavourite = (product) => {
+    const handleFavourite = product => {
         addFavourite(product);
         setisFavorite(true);
-    }
+    };
 
     return (
         <div className="pb-[620px] md:pb-36 lg:pb-20">
@@ -53,7 +53,13 @@ const ProductDetails = () => {
                         <div className="py-10 space-y-2">
                             <h2 className="text-xl font-bold">{product_title}</h2>
                             <p className="font-semibold">${price}</p>
-                            <div className="text-sm badge badge-success badge-outline">{availability ? 'In Stock' : 'Out of Stock'}</div>
+                            <div>
+                                {availability ? (
+                                    <span className="text-sm badge badge-success badge-outline text-success">In Stock</span>
+                                ) : (
+                                    <span className="text-sm badge badge-error badge-outline text-error">Out of Stock</span>
+                                )}
+                            </div>
                             <p className="text-gray-500">{description}</p>
                             <div>
                                 <p className="font-bold">Specification :</p>
@@ -67,7 +73,6 @@ const ProductDetails = () => {
                                 </ul>
                             </div>
                             <h3 className="font-bold">Rating</h3>
-
                             {/* reting  */}
                             <div className="flex items-center md:gap-4 md:pt-1">
                                 <div className="rating">
@@ -77,11 +82,12 @@ const ProductDetails = () => {
                                 </div>
                                 <div className="badge badge-success badge-outline">{rating}</div>
                             </div>
-
                             {/* card btn  */}
-
                             <div className="flex items-center gap-2 pt-3">
-                                <button disabled={isFavorite} onClick={() => handleFavourite(product)} className="btn bg-purple-500 text-white hover:text-purple-600 flex items-center rounded-full">
+                                <button
+                                    disabled={isFavorite}
+                                    onClick={() => handleFavourite(product)}
+                                    className="btn text-white font-bold bg-[#9538E2] flex items-center rounded-full hover:bg-white hover:text-[#9538E2] transition outline outline-1 outline-purple-600">
                                     Add To Card{' '}
                                     <span className="text-xl">
                                         <IoCartOutline />
@@ -89,7 +95,7 @@ const ProductDetails = () => {
                                 </button>
 
                                 <div role="button" className="btn btn-circle">
-                                    <div className="indicator text-xl hover:text-purple-600">
+                                    <div className="text-2xl hover:text-purple-600">
                                         <FaRegHeart />
                                     </div>
                                 </div>
