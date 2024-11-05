@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div className="">
-            <footer className="md:footer-center max-w-7xl mx-auto rounded pt-12 px-10 md:px-3 bg-gray-100 text-gray-900 rounded-t-3xl">
-                <nav className="mb-4">
-                    <h2 className="text-2xl font-bold">Gadget Heaven</h2>
-                    <p className="text-lg pt-2">Leading the way in cutting-edge technology and innovation.</p>
+            <footer className="md:footer-center max-w-7xl mx-auto rounded pt-6 px-10 md:px-3 bg-base-100 text-gray-900 rounded-t-3xl shadow-sm">
+                <nav className="mb-6">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Gadget Heaven</h2>
+                    <p className="text-lg pt-3 text-gray-500">Leading the way in cutting-edge technology and innovation.</p>
                 </nav>
 
                 <aside className="footer border-t pt-4 pb-8 text-lg ">

@@ -1,14 +1,14 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "category": "Computers"
   },
   {
-    "id": 3,
+    "id": 2,
     "category": "Phones"
   },
   {
-    "id": 4,
+    "id": 3,
     "category": "Smart Watches"
   }
 ]
