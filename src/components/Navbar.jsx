@@ -1,8 +1,27 @@
+import { useEffect, useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { getAllFavourites } from '../utils';
 
 const Navbar = () => {
     const location = useLocation();
+
+    const [products, setProducts] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
+
+    useEffect(() => {
+        const favorites = getAllFavourites();
+        setProducts(favorites);
+    }, []);
+
+    useEffect(() => {
+        calculateTotalCost(products);
+    }, [products])
+    
+    const calculateTotalCost = (products) => {
+        const total = products.reduce((acc, product) => acc + product.price, 0)
+        setTotalCost(total);
+    }
 
     // Determine the current path
     const isHomePage = location.pathname === '/';
@@ -67,13 +86,13 @@ const Navbar = () => {
                                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                                 />
                             </svg>
-                            <span className="badge badge-sm indicator-item">8</span>
+                            <span className="badge badge-sm indicator-item">{products.length}</span>
                         </div>
                     </div>
                     <div tabIndex={0} className="card card-compact dropdown-content bg-base-200 text-purple-600 mt-3 w-52 shadow z-50">
                         <div className="card-body">
-                            <span className="text-lg font-bold">8 Items</span>
-                            <span className="text-purple-500">Subtotal: $999</span>
+                            <span className="text-lg font-bold">{products.length} Items</span>
+                            <span className="text-purple-500">Subtotal: ${totalCost}</span>
                             <div className="card-actions">
                                 <button className="btn bg-purple-600 text-white btn-block text-lg">View Cart</button>
                             </div>
@@ -85,7 +104,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator text-2xl">
                             <FaRegHeart />
-                            <span className="badge badge-sm indicator-item">8</span>
+                            <span className="badge badge-sm indicator-item">{products.length}</span>
                         </div>
                     </div>
                 </div>
