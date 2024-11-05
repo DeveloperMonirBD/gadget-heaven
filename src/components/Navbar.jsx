@@ -6,7 +6,7 @@ const Navbar = () => {
 
     // Determine the current path
     const isHomePage = location.pathname === '/';
-    const navbarBgClass = isHomePage ? 'text-white absolute left-0 right-0' : 'bg-white text-gray-500';
+    const navbarBgClass = isHomePage ? 'text-white absolute left-0 right-0' : 'bg-white text-gray-500 z-50';
 
     const links = (
         <>
@@ -34,7 +34,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className={`navbar max-w-7xl mx-auto px-12 ${navbarBgClass} z-10 mt-4`}>
+        <div className={`navbar max-w-7xl mx-auto px-12 ${navbarBgClass} z-50 mt-4`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,7 +42,7 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-md dropdown-content bg-[#9538E2] rounded-box z-[1] mt-3 w-52 p-2 shadow text-base font-semibold gap-2">
+                    <ul tabIndex={0} className="menu menu-md dropdown-content bg-base-200 text-purple-600 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base font-semibold gap-2">
                         {links}
                     </ul>
                 </div>
@@ -55,7 +55,7 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1 gap-8 text-base font-semibold">{links}</ul>
             </div>
 
-            <div className="navbar-end">
+            <div className="navbar-end space-x-1">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator">
@@ -70,12 +70,12 @@ const Navbar = () => {
                             <span className="badge badge-sm indicator-item">8</span>
                         </div>
                     </div>
-                    <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
+                    <div tabIndex={0} className="card card-compact dropdown-content bg-base-200 text-purple-600 mt-3 w-52 shadow z-50">
                         <div className="card-body">
                             <span className="text-lg font-bold">8 Items</span>
-                            <span className="text-info">Subtotal: $999</span>
+                            <span className="text-purple-500">Subtotal: $999</span>
                             <div className="card-actions">
-                                <button className="btn btn-primary btn-block">View cart</button>
+                                <button className="btn bg-purple-600 text-white btn-block text-lg">View Cart</button>
                             </div>
                         </div>
                     </div>

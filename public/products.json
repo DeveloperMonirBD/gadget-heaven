@@ -6,9 +6,9 @@
         "category": "Computers",
         "price": 1200,
         "description": "High-performance laptop with sleek design.",
-        "Specification": ["13.3-inch display", "8GB RAM", "256GB SSD"],
+        "specification": ["13.3-inch display", "8GB RAM", "256GB SSD"],
         "availability": true,
-        "rating": 4.5
+        "rating": 3.5
     },
     {
         "id": "2",
@@ -17,9 +17,9 @@
         "category": "Computers",
         "price": 2500,
         "description": "Powerful laptop for professionals.",
-        "Specification": ["16-inch display", "16GB RAM", "1TB SSD"],
-        "availability": true,
-        "rating": 4.8
+        "specification": ["16-inch display", "16GB RAM", "1TB SSD"],
+        "availability": false,
+        "rating": 5
     },
     {
         "id": "3",
@@ -28,7 +28,7 @@
         "category": "Computers",
         "price": 1400,
         "description": "Versatile convertible laptop.",
-        "Specification": ["13.3-inch display", "8GB RAM", "512GB SSD"],
+        "specification": ["13.3-inch display", "8GB RAM", "512GB SSD"],
         "availability": true,
         "rating": 4.6
     },
@@ -39,8 +39,8 @@
         "category": "Computers",
         "price": 1800,
         "description": "Gaming laptop with powerful graphics.",
-        "Specification": ["15.6-inch display", "16GB RAM", "1TB SSD"],
-        "availability": true,
+        "specification": ["15.6-inch display", "16GB RAM", "1TB SSD"],
+        "availability": false,
         "rating": 4.7
     },
     {
@@ -50,7 +50,7 @@
         "category": "Computers",
         "price": 1500,
         "description": "Durable business laptop.",
-        "Specification": ["14-inch display", "8GB RAM", "512GB SSD"],
+        "specification": ["14-inch display", "8GB RAM", "512GB SSD"],
         "availability": true,
         "rating": 4.5
     },
@@ -61,8 +61,8 @@
         "category": "Computers",
         "price": 1300,
         "description": "Stylish and portable laptop.",
-        "Specification": ["13.5-inch display", "8GB RAM", "256GB SSD"],
-        "availability": true,
+        "specification": ["13.5-inch display", "8GB RAM", "256GB SSD"],
+        "availability": false,
         "rating": 4.6
     },
     {
@@ -72,7 +72,7 @@
         "category": "Phones",
         "price": 999,
         "description": "The latest iPhone with advanced features.",
-        "Specification": ["6.1-inch display", "128GB storage", "A15 Bionic chip"],
+        "specification": ["6.1-inch display", "128GB storage", "A15 Bionic chip"],
         "availability": true,
         "rating": 4.8
     },
@@ -83,7 +83,7 @@
         "category": "Phones",
         "price": 799,
         "description": "High-end Android smartphone.",
-        "Specification": ["6.2-inch display", "128GB storage", "Exynos 2100"],
+        "specification": ["6.2-inch display", "128GB storage", "Exynos 2100"],
         "availability": true,
         "rating": 4.6
     },
@@ -94,7 +94,7 @@
         "category": "Smart Watches",
         "price": 399,
         "description": "Advanced smartwatch with health tracking.",
-        "Specification": ["44mm case", "GPS", "Heart rate monitor"],
+        "specification": ["44mm case", "GPS", "Heart rate monitor"],
         "availability": true,
         "rating": 4.7
     },
@@ -105,8 +105,8 @@
         "category": "Smart Watches",
         "price": 349,
         "description": "Smartwatch with fitness tracking and Wear OS.",
-        "Specification": ["42mm case", "GPS", "Body Composition Analysis"],
-        "availability": true,
+        "specification": ["42mm case", "GPS", "Body Composition Analysis"],
+        "availability": false,
         "rating": 4.5
     }
 ]
