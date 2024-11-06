@@ -4,6 +4,7 @@ import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import groupImg from '../../src/assets/Group.png';
 import { getAllFavourites, removeFavorite } from '../utils';
+import toast from 'react-hot-toast';
 
 const AddToCart = () => {
     const navigate = useNavigate();
@@ -51,6 +52,7 @@ const AddToCart = () => {
         setProducts([]); // Reset state
         setTotalCost(0); // Reset total cost
         setShowModal(false);
+        toast.success('Congratulation Purchase Successfully!');
     };
 
     return (

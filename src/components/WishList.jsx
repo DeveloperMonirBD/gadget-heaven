@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { GiSettingsKnobs } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { getAllFavourites, removeFavorite } from '../utils';
@@ -7,33 +6,17 @@ import { getAllFavourites, removeFavorite } from '../utils';
 const WishList = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
-    const [totalCost, setTotalCost] = useState(0);
-    const [isAscending, setIsAscending] = useState(true);
 
     useEffect(() => {
         const favorites = getAllFavourites();
         setProducts(favorites);
     }, []);
 
-    useEffect(() => {
-        calculateTotalCost(products);
-    }, [products]);
 
     const handleRemoved = id => {
         removeFavorite(id);
         const favorites = getAllFavourites();
         setProducts(favorites);
-    };
-
-    const calculateTotalCost = products => {
-        const total = products.reduce((acc, product) => acc + product.price, 0);
-        setTotalCost(total);
-    };
-
-    const handleSort = () => {
-        const sorted = [...products].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
-        setProducts(sorted);
-        setIsAscending(!isAscending);
     };
 
     return (
