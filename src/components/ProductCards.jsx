@@ -7,16 +7,18 @@ const ProductCards = () => {
     const data = useLoaderData()
     const { category } = useParams();
 
+    const selectedCategory = category || 'All Products';
+
     useEffect(() => {
-        if (category) {
-            const filteredByCategory = [...data].filter(product => product.category === category);
+        if (selectedCategory != 'All Products') {
+            const filteredByCategory = [...data].filter(product => product.category === selectedCategory);
 
             setProducts(filteredByCategory);
         } else {
             // setProducts(data.slice(0, 6))
             setProducts(data);
-       }
-    }, [category, data])
+        }
+    }, [selectedCategory, data]);
 
     return (
         <div id="card-container" className="grid col-span-12 md:col-span-12 lg:col-span-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full relative">

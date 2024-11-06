@@ -89,6 +89,7 @@ const Navbar = () => {
                             <span className="badge badge-sm indicator-item">{products.length}</span>
                         </div>
                     </div>
+                    
                     <div tabIndex={0} className="card card-compact dropdown-content bg-base-200 text-purple-600 mt-3 w-52 shadow z-50">
                         <div className="card-body">
                             <span className="text-lg font-bold">{products.length} Items</span>
@@ -104,7 +105,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator text-2xl">
                             <FaRegHeart />
-                            <span className="badge badge-sm indicator-item">{products.length}</span>
+                            <span className="badge badge-sm indicator-item">0</span>
                         </div>
                     </div>
                 </div>

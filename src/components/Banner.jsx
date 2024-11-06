@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import bannerImg from '../../src/assets/banner.jpg';
 
 const Banner = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="border border-[#9538E2] p-1 rounded-3xl mt-2 relative mb-36 md:mb-52 lg:mb-80">
@@ -11,7 +14,11 @@ const Banner = () => {
                             <p className="py-3 pt-4 pb-5 text-sm md:text-md lg:px-10">
                                 Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
                             </p>
-                            <button className="px-8 py-3 bg-white rounded-full text-[#9538E2] text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">Shop Now</button>
+                            <button
+                                onClick={() => navigate('products')}
+                                className="px-8 py-3 bg-white rounded-full text-[#9538E2] text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">
+                                Shop Now
+                            </button>
                         </div>
                     </div>
                 </div>

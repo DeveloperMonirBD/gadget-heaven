@@ -1,12 +1,14 @@
-import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
-import Home from "../pages/Home";
-import Dashboard from "../pages/Dashboard";
-import Statistics from "../pages/Statistics";
-import ProductDetails from "../pages/ProductDetails";
-import ErrorElement from "../pages/ErrorElement";
-import ProductCards from "../components/ProductCards";
-import Products from "../pages/Products";
+import { createBrowserRouter } from 'react-router-dom';
+import AddToCart from '../components/AddToCart';
+import ProductCards from '../components/ProductCards';
+import MainLayout from '../layouts/MainLayout';
+import Dashboard from '../pages/Dashboard';
+import ErrorElement from '../pages/ErrorElement';
+import Home from '../pages/Home';
+import ProductDetails from '../pages/ProductDetails';
+import Products from '../pages/Products';
+import Statistics from '../pages/Statistics';
+import WishList from '../components/WishList';
 
 const routes = createBrowserRouter([
     {
@@ -20,33 +22,47 @@ const routes = createBrowserRouter([
                 loader: () => fetch('../categories.json'),
                 children: [
                     {
-                        path: '/',
+                        path: '',
                         element: <ProductCards />,
                         loader: () => fetch('../products.json')
                     },
                     {
-                        path: '/category/:category',
+                        path: 'category/:category',
                         element: <ProductCards />,
                         loader: () => fetch('../products.json')
                     }
                 ]
             },
             {
-                path: '/products',
+                path: 'products',
                 element: <Products />,
                 loader: () => fetch('../products.json')
             },
             {
-                path: '/statistics',
+                path: 'statistics',
                 element: <Statistics />
             },
             {
-                path: '/dashboard',
+                path: 'dashboard',
                 element: <Dashboard />,
-                loader: () => fetch('../products.json')
+                loader: () => fetch('../products.json'),
+                children: [
+                    {
+                        path: '',
+                        element: <AddToCart />
+                    },
+                    {
+                        path: 'add-to-cart',
+                        element: <AddToCart />
+                    },
+                    {
+                        path: 'wishlist',
+                        element: <WishList />
+                    }
+                ]
             },
             {
-                path: '/product/:id',
+                path: 'product/:id',
                 element: <ProductDetails />,
                 loader: () => fetch('../products.json')
             }

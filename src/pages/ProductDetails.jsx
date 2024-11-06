@@ -88,13 +88,13 @@ const ProductDetails = () => {
                                     disabled={isFavorite}
                                     onClick={() => handleFavourite(product)}
                                     className="btn text-white font-bold bg-[#9538E2] flex items-center rounded-full hover:bg-white hover:text-[#9538E2] transition outline outline-1 outline-purple-600">
-                                    Add To Card{' '}
+                                    Add To Card
                                     <span className="text-xl">
                                         <IoCartOutline />
                                     </span>
                                 </button>
 
-                                <div role="button" className="btn btn-circle">
+                                <div onClick={() => handleFavourite(product)} role="button" className="btn btn-circle">
                                     <div className="text-2xl hover:text-purple-600">
                                         <FaRegHeart />
                                     </div>
