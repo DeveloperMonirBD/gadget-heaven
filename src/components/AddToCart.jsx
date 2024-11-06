@@ -61,7 +61,7 @@ const AddToCart = () => {
             <div className={`mt-8 ${showModal ? 'mt-0' : ''}`}>
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-between items-center mb-10 px-6">
                     <div className="flex w-full lg:w-[700px] justify-between">
-                        <p className="font-bold text-lg">Cart</p>
+                        <p className="font-bold text-xl">Cart</p>
                         <p className="font-bold text-lg">Total cost: ${totalCost.toFixed(2)}</p>
                     </div>
 
@@ -103,7 +103,7 @@ const AddToCart = () => {
                         </div>
                     ))
                 ) : (
-                    <p className="text-center text-2xl font-semibold text-purple-800 my-20">Your Cart is empty.</p>
+                    <p className="text-center text-2xl font-semibold text-purple-800 my-20">Your Cart is empty</p>
                 )}
 
                 <button

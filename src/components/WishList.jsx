@@ -26,7 +26,7 @@ const WishList = () => {
             <div className="mt-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-between items-center mb-10 px-6">
                     <div className="flex w-full lg:w-[700px] justify-between">
-                        <p className="font-bold text-lg">Wishlist</p>
+                        <p className="font-bold text-xl">Wishlist</p>
                     </div>
                 </div>
 
