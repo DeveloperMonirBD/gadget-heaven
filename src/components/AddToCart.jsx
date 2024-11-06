@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { GiSettingsKnobs } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { getAllFavourites, removeFavorite } from '../utils';
 import groupImg from '../../src/assets/Group.png';
-
+import { getAllFavourites, removeFavorite } from '../utils';
 
 const AddToCart = () => {
     const navigate = useNavigate();
@@ -14,6 +13,7 @@ const AddToCart = () => {
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
+        // Fetch favorites from localStorage initially
         const favorites = getAllFavourites();
         setProducts(favorites);
     }, []);
@@ -23,7 +23,9 @@ const AddToCart = () => {
     }, [products]);
 
     const handleRemoved = id => {
+        // Remove product from favorites in localStorage
         removeFavorite(id);
+        // Re-fetch the updated list from localStorage
         const favorites = getAllFavourites();
         setProducts(favorites);
     };
@@ -40,17 +42,21 @@ const AddToCart = () => {
     };
 
     const handlePurchaseClick = () => {
-        setShowModal(true);
+        // Clear products from both state and localStorage
+        localStorage.removeItem('favourites'); // Assuming 'favourites' is the key used in localStorage
+        setShowModal(true); // Show success modal
     };
 
     const handleCloseModal = () => {
+        setProducts([]); // Reset state
+        setTotalCost(0); // Reset total cost
         setShowModal(false);
     };
 
     return (
         <>
             {/* selected button */}
-            <div className="mt-8">
+            <div className={`mt-8 ${showModal ? 'mt-0' : ''}`}>
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-between items-center mb-10 px-6">
                     <div className="flex w-full lg:w-[700px] justify-between">
                         <p className="font-bold text-lg">Cart</p>
@@ -76,23 +82,27 @@ const AddToCart = () => {
                 </div>
 
                 {/* selected card */}
-                {products.map(({ id, product_image, product_title, description, price }) => (
-                    <div key={id} className="flex items-center justify-between border p-2 md:p-6 rounded-2xl mb-6 shadow-md">
-                        <div className="flex items-center gap-4 md:gap-10">
-                            <div className="w-24 md:w-36">
-                                <img className="w-full object-cover" src={product_image} alt={product_title} />
+                {products.length > 0 ? (
+                    products.map(({ id, product_image, product_title, description, price }) => (
+                        <div key={id} className="flex items-center justify-between border p-2 md:p-6 rounded-2xl mb-6 shadow-md">
+                            <div className="flex items-center gap-4 md:gap-10">
+                                <div className="w-24 md:w-36">
+                                    <img className="w-full object-cover" src={product_image} alt={product_title} />
+                                </div>
+                                <div className="space-y-2">
+                                    <h3 className="md:text-2xl font-semibold md:font-bold">{product_title}</h3>
+                                    <p className="md:text-base">{description}</p>
+                                    <p className="text-base font-semibold">${price}</p>
+                                </div>
                             </div>
-                            <div className="space-y-2">
-                                <h3 className="md:text-2xl font-semibold md:font-bold">{product_title}</h3>
-                                <p className="md:text-base">{description}</p>
-                                <p className="text-base font-semibold">${price}</p>
-                            </div>
+                            <button onClick={() => handleRemoved(id)} className="text-2xl md:text-4xl text-red-500 ml-2 mr-3 transition hover:scale-110">
+                                <MdClose />
+                            </button>
                         </div>
-                        <button onClick={() => handleRemoved(id)} className="text-2xl md:text-4xl text-red-500 ml-2 mr-3 transition hover:scale-110">
-                            <MdClose />
-                        </button>
-                    </div>
-                ))}
+                    ))
+                ) : (
+                    <p className="text-center text-lg font-semibold">Your cart is empty.</p>
+                )}
 
                 <button
                     onClick={() => navigate('/products')}
@@ -110,7 +120,7 @@ const AddToCart = () => {
                         <h2 className="text-xl font-bold border-b pb-3">Payment Successfully</h2>
                         <p className="text-sm mt-3 text-gray-500">Thanks for purchasing.</p>
                         <p className="text-sm mb-4">
-                            <span className='text-gray-600'>Total:</span> ${totalCost.toFixed(2)}
+                            <span className="text-gray-600">Total:</span> ${totalCost.toFixed(2)}
                         </p>
                         <button onClick={handleCloseModal} className="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition">
                             Close
