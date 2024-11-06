@@ -42,21 +42,7 @@ const WishList = () => {
             <div className="mt-8">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-between items-center mb-10 px-6">
                     <div className="flex w-full lg:w-[700px] justify-between">
-                        <p className="font-bold text-lg">Cart</p>
-                        <p className="font-bold text-lg">Total cost: ${totalCost.toFixed(2)}</p>
-                    </div>
-
-                    <div className="space-x-2 flex md:justify-end w-full lg:w-[500px] gap-2 items-center text-sm md:text-lg font-bold">
-                        <button
-                            onClick={handleSort}
-                            className="flex items-center gap-2 px-6 py-3 bg-white rounded-full text-[#9538E2] hover:bg-purple-600 hover:text-white transition outline outline-1">
-                            Sort By Price ({isAscending ? 'ASC' : 'DSC'})
-                            <span>
-                                <GiSettingsKnobs />
-                            </span>
-                        </button>
-
-                        <button className="px-8 py-3 bg-white rounded-full text-[#9538E2] md:text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">Purchase</button>
+                        <p className="font-bold text-lg">Wishlist</p>
                     </div>
                 </div>
 

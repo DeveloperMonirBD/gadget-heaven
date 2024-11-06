@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation} from 'react-router-dom';
 import { getAllFavourites } from '../utils';
 
 const Navbar = () => {
+
     const location = useLocation();
 
     const [products, setProducts] = useState([]);
@@ -89,13 +90,15 @@ const Navbar = () => {
                             <span className="badge badge-sm indicator-item">{products.length}</span>
                         </div>
                     </div>
-                    
+
                     <div tabIndex={0} className="card card-compact dropdown-content bg-base-200 text-purple-600 mt-3 w-52 shadow z-50">
                         <div className="card-body">
                             <span className="text-lg font-bold">{products.length} Items</span>
                             <span className="text-purple-500">Subtotal: ${totalCost}</span>
                             <div className="card-actions">
-                                <button className="btn bg-purple-600 text-white btn-block text-lg">View Cart</button>
+                                <Link to="dashboard" className="btn bg-purple-600 text-white btn-block text-lg">
+                                    View Cart
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -105,7 +108,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator text-2xl">
                             <FaRegHeart />
-                            <span className="badge badge-sm indicator-item">0</span>
+                            <span className="badge badge-sm indicator-item">{products.length}</span>
                         </div>
                     </div>
                 </div>

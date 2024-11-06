@@ -3,12 +3,15 @@ import { GiSettingsKnobs } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { getAllFavourites, removeFavorite } from '../utils';
+import groupImg from '../../src/assets/Group.png';
+
 
 const AddToCart = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
     const [isAscending, setIsAscending] = useState(true);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const favorites = getAllFavourites();
@@ -34,7 +37,16 @@ const AddToCart = () => {
         const sorted = [...products].sort((a, b) => (isAscending ? a.price - b.price : b.price - a.price));
         setProducts(sorted);
         setIsAscending(!isAscending);
-    }; 
+    };
+
+    const handlePurchaseClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
         <>
             {/* selected button */}
@@ -55,7 +67,11 @@ const AddToCart = () => {
                             </span>
                         </button>
 
-                        <button className="px-8 py-3 bg-white rounded-full text-[#9538E2] md:text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">Purchase</button>
+                        <button
+                            onClick={handlePurchaseClick}
+                            className="px-8 py-3 bg-white rounded-full text-[#9538E2] md:text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">
+                            Purchase
+                        </button>
                     </div>
                 </div>
 
@@ -84,6 +100,24 @@ const AddToCart = () => {
                     Add More Products
                 </button>
             </div>
+
+            {showModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col text-center justify-center">
+                        <div className="flex justify-center mb-3 mt-2">
+                            <img className="w-10" src={groupImg} alt="" />
+                        </div>
+                        <h2 className="text-xl font-bold border-b pb-3">Payment Successfully</h2>
+                        <p className="text-sm mt-3 text-gray-500">Thanks for purchasing.</p>
+                        <p className="text-sm mb-4">
+                            <span className='text-gray-600'>Total:</span> ${totalCost.toFixed(2)}
+                        </p>
+                        <button onClick={handleCloseModal} className="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     );
 };
