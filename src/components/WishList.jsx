@@ -1,18 +1,24 @@
 import { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { getAllWishlists } from '../utils/wish';
-
+import { getAllWishlists, removeWishCard } from '../utils/wish';
 
 const WishList = () => {
     const navigate = useNavigate();
-    const [wishCard, setWishCard] = useState([])
+    const [wishCard, setWishCard] = useState([]);
 
     useEffect(() => {
-        const wishCards = getAllWishlists()
+        const wishCards = getAllWishlists();
         setWishCard(wishCards);
-    }, [wishCard])
+    }, []);
 
+    const handleRemoved = id => {
+        // Remove product from favorites in localStorage
+        removeWishCard(id);
+        // Re-fetch the updated list from localStorage
+        const wishCards = getAllWishlists();
+        setWishCard(wishCards);
+    };
 
     return (
         <>

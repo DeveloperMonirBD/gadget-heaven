@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
-import { Link, NavLink, useLocation} from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { getAllFavourites } from '../utils';
+import { getAllWishlists } from '../utils/wish';
 
 const Navbar = () => {
-
     const location = useLocation();
 
     const [products, setProducts] = useState([]);
+    const [wishCard, setWishCard] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
 
     useEffect(() => {
@@ -16,13 +17,18 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
+        const wishItem = getAllWishlists();
+        setWishCard(wishItem);
+    },[]);
+
+    useEffect(() => {
         calculateTotalCost(products);
-    }, [products])
-    
-    const calculateTotalCost = (products) => {
-        const total = products.reduce((acc, product) => acc + product.price, 0)
+    }, [products]);
+
+    const calculateTotalCost = products => {
+        const total = products.reduce((acc, product) => acc + product.price, 0);
         setTotalCost(total);
-    }
+    };
 
     // Determine the current path
     const isHomePage = location.pathname === '/';
@@ -108,7 +114,7 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <div className="indicator text-2xl">
                             <FaRegHeart />
-                            <span className="badge badge-sm indicator-item">{products.length}</span>
+                            <span className="badge badge-sm indicator-item">{wishCard.length}</span>
                         </div>
                     </div>
                 </div>

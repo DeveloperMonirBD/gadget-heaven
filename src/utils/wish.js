@@ -7,11 +7,9 @@ const getAllWishlists = () => {
     
     if (all) {
         const wishCards = JSON.parse(all);
-        console.log(wishCards)
-        return wishCards
+        return wishCards;
     } else {
-        console.log([])
-        return []
+        return [];
     }
 }
 
@@ -28,6 +26,14 @@ const addWishlist = (wishCard) => {
 }
 
 // remove a wishlist from local storage
+const removeWishCard = id => {
+    const wishCards = getAllWishlists();
+
+    const remaining = wishCards.filter(product => product.id != id);
+
+    localStorage.setItem('wishCards', JSON.stringify(remaining));
+    toast.success('Successfully Removed!');
+};
 
 
-export { addWishlist, getAllWishlists };
+export { addWishlist, getAllWishlists, removeWishCard };
