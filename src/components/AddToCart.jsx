@@ -77,7 +77,7 @@ const AddToCart = () => {
 
                         <button
                             onClick={handlePurchaseClick}
-                            className="px-8 py-3 bg-white rounded-full text-[#9538E2] md:text-lg font-bold hover:bg-purple-600 hover:text-white transition outline outline-1">
+                            className="px-8 py-3 text-white rounded-full bg-[#9538E2] md:text-lg font-bold hover:bg-white hover:text-purple-800 transition outline outline-1">
                             Purchase
                         </button>
                     </div>
@@ -103,7 +103,7 @@ const AddToCart = () => {
                         </div>
                     ))
                 ) : (
-                    <p className="text-center text-lg font-semibold">Your cart is empty.</p>
+                    <p className="text-center text-2xl font-semibold text-purple-800 my-20">Your Cart is empty.</p>
                 )}
 
                 <button
