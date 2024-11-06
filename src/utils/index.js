@@ -8,7 +8,6 @@ const getAllFavourites = () => {
         const favourites = JSON.parse(allFavourites);
         return favourites;
     } else {
-        console.log([]);
         return [];
     }
 };

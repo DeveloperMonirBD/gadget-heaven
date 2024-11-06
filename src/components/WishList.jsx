@@ -1,23 +1,18 @@
 import { useEffect, useState } from 'react';
 import { MdClose } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import { getAllFavourites, removeFavorite } from '../utils';
+import { getAllWishlists } from '../utils/wish';
+
 
 const WishList = () => {
     const navigate = useNavigate();
-    const [products, setProducts] = useState([]);
+    const [wishCard, setWishCard] = useState([])
 
     useEffect(() => {
-        const favorites = getAllFavourites();
-        setProducts(favorites);
-    }, []);
+        const wishCards = getAllWishlists()
+        setWishCard(wishCards);
+    }, [wishCard])
 
-
-    const handleRemoved = id => {
-        removeFavorite(id);
-        const favorites = getAllFavourites();
-        setProducts(favorites);
-    };
 
     return (
         <>
@@ -30,7 +25,7 @@ const WishList = () => {
                 </div>
 
                 {/* selected card */}
-                {products.map(({ id, product_image, product_title, description, price }) => (
+                {wishCard.map(({ id, product_image, product_title, description, price }) => (
                     <div key={id} className="flex items-center justify-between border p-2 md:p-6 rounded-2xl mb-6 shadow-md">
                         <div className="flex items-center gap-4 md:gap-10">
                             <div className="w-24 md:w-36">

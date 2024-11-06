@@ -3,6 +3,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { addFavourite, getAllFavourites } from '../utils';
+import { addWishlist, getAllWishlists } from '../utils/wish';
 
 const ProductDetails = () => {
     const data = useLoaderData();
@@ -28,6 +29,14 @@ const ProductDetails = () => {
         addFavourite(product);
         setisFavorite(true);
     };
+
+
+    // Handle Wishlist btn click
+    const handleWishlist = (wishCard) => {
+        addWishlist(wishCard);
+    }
+
+
 
     return (
         <div className="pb-[620px] md:pb-36 lg:pb-20">
@@ -94,7 +103,8 @@ const ProductDetails = () => {
                                     </span>
                                 </button>
 
-                                <div onClick={() => handleFavourite(product)} role="button" className="btn btn-circle">
+                                    {/* wishlist Button  */}
+                                <div onClick={() => handleWishlist(product)} role="button" className="btn btn-circle">
                                     <div className="text-2xl hover:text-purple-600">
                                         <FaRegHeart />
                                     </div>
