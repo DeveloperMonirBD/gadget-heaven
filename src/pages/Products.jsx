@@ -25,7 +25,7 @@ const Products = () => {
 
                 <div className="flex justify-between items-center text-white">
                     <div>
-                        <h1 className="hidden md:flex text-xl font-thin">Sort Coffee&apos;s by Popularity & Rating-&gt;</h1>
+                        <h1 className="hidden md:flex text-xl font-thin">Sort Product&apos;s by Pricing-&gt;</h1>
                     </div>
 
                     <div className="space-x-4">
