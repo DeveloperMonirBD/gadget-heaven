@@ -29,8 +29,11 @@ Explore the world of cutting-edge technology with Gadget Heaven and find the per
     -   Sequential Execution
 
 ## Technologies Used
-
+    -   React-Router
+    -   Use Navigate
+    -   Use Location
     -   React-Toastify
+    -   TinyBarChart
     -   let and const
     -   Arrow function
     -   Template Literals
@@ -39,13 +42,7 @@ Explore the world of cutting-edge technology with Gadget Heaven and find the per
 
 ## Getting Started
 
-1. Clone the repository: git clone https://github.com/programming-hero-web-course2/b10a8-gadget-heaven-DeveloperMonirBD.git
-2. Navigate to the project directory: b10a8-gadget-heaven-DeveloperMonirBD
+1. Clone the repository: https://github.com/DeveloperMonirBD/gadget-heaven.git
+2. Navigate to the project directory: gadget-heaven
 3. Install dependencies: npm install
 4. Start the development server: npm start
-
-## What to Submit
-
--   Private Github Repo Link : https://github.com/programming-hero-web-course2/b10a8-gadget-heaven-DeveloperMonirBD
-
--   Live link to the deployed project : https://gadhet-haven-a8.netlify.app/
