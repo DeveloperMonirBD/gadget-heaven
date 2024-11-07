@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet-async';
 import { BarChart, Bar } from 'recharts';
 
 const data = [
@@ -18,6 +19,9 @@ const data = [
 const Statistics = () => {
     return (
         <>
+            <Helmet>
+                <title>Gadget Haven | Statistics</title>
+            </Helmet>
             <div className="mb-24">
                 <div className="bg-[#9538E2] text-white pt-4 pb-10 rounded-t-3xl mt-8 px-8 md:px-20 lg:px-32">
                     <div className="hero-content text-center">
@@ -32,7 +36,7 @@ const Statistics = () => {
                     <BarChart width={350} height={300} data={data} barSize={25}>
                         <Bar dataKey="rating" fill="#9538E2" />
                     </BarChart>
-                    <h2 className='text-xl font-bold mt-4 text-purple-700'>Statistics by Product Rating</h2>
+                    <h2 className="text-xl font-bold mt-4 text-purple-700">Statistics by Product Rating</h2>
                 </div>
             </div>
         </>

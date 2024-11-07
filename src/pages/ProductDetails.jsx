@@ -4,6 +4,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { addFavourite, getAllFavourites } from '../utils';
 import { addWishlist, getAllWishlists } from '../utils/wish';
+import { Helmet } from 'react-helmet-async';
 
 const ProductDetails = () => {
     const data = useLoaderData();
@@ -40,6 +41,9 @@ const ProductDetails = () => {
 
     return (
         <div className="pb-[620px] md:pb-36 lg:pb-20">
+            <Helmet>
+                <title>Gadget Haven | Product Details</title>
+            </Helmet>
             <div className="border border-[#9538E2] p-1 rounded-3xl mt-6 relative mb-36 md:mb-52 lg:mb-80">
                 <div className="hero bg-[#9538E2] rounded-3xl text-gray-100 min-h-[300px] md:min-h-[280px]  lg:min-h-[350px] flex justify-center items-start pt-6">
                     <div className="text-center z-10 mt-2 md:mt-0">
@@ -103,7 +107,7 @@ const ProductDetails = () => {
                                     </span>
                                 </button>
 
-                                    {/* wishlist Button  */}
+                                {/* wishlist Button  */}
                                 <div onClick={() => handleWishlist(product)} role="button" className="btn btn-circle">
                                     <div className="text-2xl hover:text-purple-600">
                                         <FaRegHeart />

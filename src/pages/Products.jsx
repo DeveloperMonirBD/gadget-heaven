@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Card from '../components/Card';
+import { Helmet } from 'react-helmet-async';
 
 const Products = () => {
     const data = useLoaderData();
@@ -15,6 +16,9 @@ const Products = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Gadget Haven | Products</title>
+            </Helmet>
             <div className="bg-[#9538E2] text-white pt-4 pb-10 rounded-t-3xl mt-8 px-8 md:px-20 lg:px-32">
                 <div className="hero-content text-center">
                     <div className="max-w-md">
