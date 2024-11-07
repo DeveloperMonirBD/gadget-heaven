@@ -28,7 +28,7 @@ Explore the world of cutting-edge technology with Gadget Heaven and find the per
     -   Error Handling
     -   Sequential Execution
 
-## Technologies Used
+## Technologies Features
     -   React-Router
     -   Use Navigate
     -   Use Location
